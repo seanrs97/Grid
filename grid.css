@@ -1,0 +1,142 @@
+body{
+	color:white;
+	background:black;
+}
+#container{
+	max-width:960px;
+	margin:0 auto;
+	display:grid;
+	/*grid-template-columns:33.3% 33.3% 33.3%; all columns same size */
+	/*grid-template-columns: 30% 20% 40%; different widths */
+	/*grid-template-columns: 1fr 2fr 1fr; splits up the grid equally */
+	grid-template-columns: repeat(3, 1fr); /*different method;*/
+	grid-template-rows:repeat(3,minmax(200px,auto));
+	margin: 0 auto;
+	grid-column-gap:10px;
+	grid-row-gap:10px;
+	/*grid-auto-rows: minmax(200px,auto);*/
+}
+#container div{
+	background:blue;
+	padding:30px;
+}
+#container div:nth-child(even){
+	background:green;
+}
+#section-one{
+	background:red;
+}
+#section-two{
+	background:purple;
+}
+#section-three{
+	background:orange;
+}
+#section-four{
+	background:blue;
+}
+#section-five{
+	background:green;
+}
+
+
+
+/* GRID NUMBER TWO (GRID LINES) */
+#layout{
+	display:grid;
+	grid-gap:10px;
+	grid-template-columns: repeat(6,1fr);
+	grid-template-rows: repeat(4,minmax(150px,auto));
+	max-width:960px;
+	margin:0 auto;
+	margin-top:40px;
+}
+#layout div{
+	background:red;
+	padding:30px;
+}
+#layout div:nth-child(even){
+	background:orange;
+}
+.one{
+	/*grid-column-start: 1;
+	grid-column-end:3;*/
+	grid-column:1/3; /* same as above */
+}
+.two{
+	grid-column:3/7;
+}
+.three{
+	grid-column:1/4;
+	grid-row:2/4;
+}
+.four{
+	grid-column:4/7;
+	grid-row:2/4;
+}
+.five{
+	grid-column:3/7;
+}
+.six{
+	grid-column:1/3;
+	grid-row:4;
+}
+/* NESTED GRIDS */
+.nest{
+	display:grid;
+	grid-template-columns:repeat(3,1fr);
+	grid-gap:10px;
+	max-width:960px;
+	margin:0 auto;
+	margin-top:40px;
+}
+.nest div{
+	background:yellow;
+	padding:30px;
+}
+.nest div:nth-child(even){
+	background:black;
+}
+.nested{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	grid-gap:10px;
+	grid-column:span 3;
+}
+.nested p{
+	border:1px solid orange;
+	padding:20px;
+	margin:0;
+}
+/* JUSTIFY */
+#justify{
+	display:grid;
+	grid-template-columns:repeat(3,1fr);
+	grid-auto-rows:minmax(150px,auto);
+	grid-gap:10px;
+	max-width:960px;
+	margin:0 auto;
+	margin-top:40px;
+	/*align-items:stretch;
+	justify-items:start;*/
+}
+#justify div{
+	background: grey;
+	padding:30px;
+}
+#justify div:nth-child(even){
+	background:white;
+}
+.just-one{
+	justify-self:end;
+	align-self:end;
+}
+.just-two{
+	align-self:center;
+	justify-self:center;
+}
+.just-three{
+	align-self:start;
+	justify-self:start;
+}
+
